@@ -56,6 +56,27 @@ export const constantRoutes = [
   },
 
   {
+    path:'/department',
+    component:Layout,
+    name: '部门管理',
+    meta: { title: '部门管理', icon: 'peoples' },
+    children: [
+      {
+        path: 'index',
+        name: 'Department',
+        component: () => import('@/views/department/index'),
+        meta: { title: '部门列表', icon: 'tree' }
+      },
+      {
+        path: 'create',
+        name: 'Create',
+        component: () => import('@/views/department/add'),
+        meta: { title: '新增部门', icon: 'form' }
+      },
+    ]
+  },
+
+  {
     path: '/example',
     component: Layout,
     redirect: '/example/table',
